@@ -2,18 +2,17 @@ package com.example.kyung.daggerpractice.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 
 import com.example.kyung.daggerpractice.R
-import dagger.android.support.AndroidSupportInjection
+import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_movies.*
 import javax.inject.Inject
 
-class MoviesFragment: Fragment(), MoviesFragmentContract.View {
+class MoviesFragment: DaggerFragment(), MoviesFragmentContract.View {
 
     @Inject lateinit var presenter: MoviesFragmentContract.Presenter
 
@@ -32,7 +31,6 @@ class MoviesFragment: Fragment(), MoviesFragmentContract.View {
     }
 
     override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }
 

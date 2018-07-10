@@ -12,7 +12,3 @@ interface MainComponent : AndroidInjector<MainActivity> {
     @Subcomponent.Builder
     abstract class Builder : AndroidInjector.Builder<MainActivity>()
 }
-
-// 그런데 이제 DaggerAppCompatActivity 가 있으므로 이를 사용하자!!
-// => 따로 컴포넌트 작성 안하고 바로 AppModule 에 MainModule 을 넣어주면 된다.
-// 현재는 스터디용
